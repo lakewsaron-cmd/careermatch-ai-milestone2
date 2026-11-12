@@ -15,7 +15,7 @@ with st.sidebar:
     st.write('Maximum 4 tool calls per request. Gemini is optional; requests can consume API quota.')
     st.write('A person must review each recommendation before applying. This demo never applies to jobs.')
     use_gemini=st.checkbox('Enable Gemini explanation',value=False)
-    model=st.selectbox('Gemini model',['gemini-2.5-flash'])
+    model=st.selectbox('Gemini model',['gemini-3.5-flash-lite','gemini-3.8-flash','gemini-2.5-flash'])
     st.caption('For deployment, configure GEMINI_API_KEY in Streamlit Secrets. Never paste keys into the repo.')
 
 resume=st.file_uploader('Upload a text-based PDF resume (optional, max 2 MB and 5 pages)',type='pdf')
