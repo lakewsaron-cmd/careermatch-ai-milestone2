@@ -1,0 +1,146 @@
+{
+  "definition": {
+    "pass_at_1": "fraction of cases with first run passing",
+    "pass_pow_3": "fraction of cases where all three runs passed"
+  },
+  "mode": "OFFLINE ONLY; no Gemini API calls",
+  "cases": [
+    {
+      "test_id": "T01",
+      "case": "Analytics matching",
+      "runs": [
+        true,
+        true,
+        true
+      ],
+      "pass_at_1": 1,
+      "pass_pow_3": 1
+    },
+    {
+      "test_id": "T02",
+      "case": "BI requirements",
+      "runs": [
+        true,
+        true,
+        true
+      ],
+      "pass_at_1": 1,
+      "pass_pow_3": 1
+    },
+    {
+      "test_id": "T03",
+      "case": "Software matching",
+      "runs": [
+        true,
+        true,
+        true
+      ],
+      "pass_at_1": 1,
+      "pass_pow_3": 1
+    },
+    {
+      "test_id": "T04",
+      "case": "Full-time filter",
+      "runs": [
+        true,
+        true,
+        true
+      ],
+      "pass_at_1": 1,
+      "pass_pow_3": 1
+    },
+    {
+      "test_id": "T05",
+      "case": "Remote preference",
+      "runs": [
+        true,
+        true,
+        true
+      ],
+      "pass_at_1": 1,
+      "pass_pow_3": 1
+    },
+    {
+      "test_id": "T06",
+      "case": "Both job types",
+      "runs": [
+        true,
+        true,
+        true
+      ],
+      "pass_at_1": 1,
+      "pass_pow_3": 1
+    },
+    {
+      "test_id": "T07",
+      "case": "No known skills",
+      "runs": [
+        true,
+        true,
+        true
+      ],
+      "pass_at_1": 1,
+      "pass_pow_3": 1
+    },
+    {
+      "test_id": "T08",
+      "case": "No interest match",
+      "runs": [
+        true,
+        true,
+        true
+      ],
+      "pass_at_1": 1,
+      "pass_pow_3": 1
+    },
+    {
+      "test_id": "T09",
+      "case": "Guard at step one",
+      "runs": [
+        true,
+        true,
+        true
+      ],
+      "pass_at_1": 1,
+      "pass_pow_3": 1
+    },
+    {
+      "test_id": "T10",
+      "case": "Guard at step two",
+      "runs": [
+        true,
+        true,
+        true
+      ],
+      "pass_at_1": 1,
+      "pass_pow_3": 1
+    },
+    {
+      "test_id": "T11",
+      "case": "Adversarial instruction in skills",
+      "runs": [
+        true,
+        true,
+        true
+      ],
+      "pass_at_1": 1,
+      "pass_pow_3": 1
+    },
+    {
+      "test_id": "T12",
+      "case": "Adversarial huge input",
+      "runs": [
+        true,
+        true,
+        true
+      ],
+      "pass_at_1": 1,
+      "pass_pow_3": 1
+    }
+  ],
+  "total_cases": 12,
+  "total_runs": 36,
+  "pass_at_1": 1.0,
+  "pass_pow_3": 1.0,
+  "failures": []
+}

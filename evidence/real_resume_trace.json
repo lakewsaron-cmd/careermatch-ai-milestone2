@@ -1,0 +1,76 @@
+{
+  "status": "complete",
+  "stop_reason": "All planned tools completed",
+  "profile": {
+    "skills": [
+      "Python",
+      "SQL",
+      "Excel",
+      "Power BI",
+      "Tableau",
+      "Microsoft Copilot",
+      "Prompt Engineering",
+      "Workflow Automation",
+      "Data Visualization",
+      "Project Coordination",
+      "Canva"
+    ],
+    "degree": "Computer Information Systems",
+    "source": "uploaded PDF (processed in memory)"
+  },
+  "trace": [
+    {
+      "step": 1,
+      "agent": "Profile Agent",
+      "reasoning_summary": "Identify only job-relevant skills from the input.",
+      "tool_call": "extract_profile",
+      "observation": "Found 11 recognized skills; source: uploaded PDF (processed in memory)."
+    },
+    {
+      "step": 2,
+      "agent": "Job Search Agent",
+      "reasoning_summary": "Retrieve demo listings using the job type and location filters.",
+      "tool_call": "search_jobs",
+      "observation": "Loaded 4 fictional listings matching type/location."
+    },
+    {
+      "step": 3,
+      "agent": "Match Agent",
+      "reasoning_summary": "Compare listed qualifications and return grounded matches.",
+      "tool_call": "rank_jobs",
+      "observation": "Ranked 3 fictional listings; top overlap: 100."
+    }
+  ],
+  "matches": [
+    {
+      "title": "Business Intelligence Intern",
+      "source": "DEMO DATA - fictional listing",
+      "matched_skills": [
+        "Excel",
+        "SQL",
+        "Power BI"
+      ],
+      "skill_overlap_percent": 100
+    },
+    {
+      "title": "Data Analyst Intern",
+      "source": "DEMO DATA - fictional listing",
+      "matched_skills": [
+        "Python",
+        "SQL",
+        "Excel",
+        "Tableau"
+      ],
+      "skill_overlap_percent": 100
+    },
+    {
+      "title": "Remote Data Intern",
+      "source": "DEMO DATA - fictional listing",
+      "matched_skills": [
+        "Python",
+        "Excel"
+      ],
+      "skill_overlap_percent": 67
+    }
+  ]
+}
