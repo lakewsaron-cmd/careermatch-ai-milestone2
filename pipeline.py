@@ -156,10 +156,15 @@ def run_pipeline(*, pdf_bytes:Optional[bytes]=None,manual_skills:str='',job_type
                     obs='No candidate match: Gemini call skipped.'
         except Exception as exc:
             # Do not include raw PDF, API keys, or error payloads in public traces.
-            if isinstance(exc,(ValueError,FileNotFoundError,PermissionError)):
-                safe_error=str(exc)[:140]
+            if isinstance(exc, (ValueError, FileNotFoundError, PermissionError)):
+                safe_error = str(exc)[:140]
+            elif (
+                isinstance(exc, RuntimeError)
+                and re.fullmatch(r"Gemini API returned HTTP [0-9]{3}", str(exc))
+            ):
+                safe_error = str(exc)
             else:
-                safe_error=f'{type(exc).__name__}; review server logs privately'
+                safe_error = f"{type(exc).__name__}; review server logs privately"
             trace.append({'step':index,'agent':agent,'reasoning_summary':summaries[tool],
                           'tool_call':tool,'observation':'Error: '+safe_error})
             return {'status':'tool_error','stop_reason':'Tool failed','trace':trace,
