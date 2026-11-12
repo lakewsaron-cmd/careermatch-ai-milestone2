@@ -106,13 +106,14 @@ def gemini_explain(profile:dict, job:dict, key:str, model:str='gemini-2.5-flash'
                           'generationConfig':{'temperature':0,'maxOutputTokens':240}}).encode()
     req=urllib.request.Request('https://generativelanguage.googleapis.com/v1beta/models/' + model + ':generateContent',
                                data=payload,headers={'x-goog-api-key':key,'Content-Type':'application/json'},method='POST')
+   
     try:
-    with urllib.request.urlopen(req, timeout=20) as response:
-        reply = json.load(response)
-except urllib.error.HTTPError as e:
-    raise RuntimeError(
-        f"Gemini API returned HTTP {e.code}"
-    ) from None
+        with urllib.request.urlopen(req, timeout=20) as response:
+            reply = json.load(response)
+    except urllib.error.HTTPError as e:
+        raise RuntimeError(
+            f"Gemini API returned HTTP {e.code}"
+        ) from None
     text=' '.join(p.get('text','') for p in reply.get('candidates',[{}])[0].get('content',{}).get('parts',[])).strip()
     if not text: raise ValueError('Gemini returned no explanation')
     return text[:1600]
